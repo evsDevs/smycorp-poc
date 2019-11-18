@@ -5,10 +5,14 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@reach/dialog": "^0.6.1",
+    "@reach/tabs": "^0.6.1",
+    "@reach/visually-hidden": "^0.6.1",
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-netlify-cms": "^4.1.28",
+    "gatsby-plugin-netlify-identity": "0.0.3",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sharp": "^2.2.37",
@@ -19,7 +23,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-netlify-identity-widget": "^0.2.5"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

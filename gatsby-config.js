@@ -36,6 +36,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://elastic-allen-ac7ddd.netlify.com/`, // required!
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
