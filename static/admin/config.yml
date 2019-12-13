@@ -16,7 +16,7 @@ collections:
           name: category,
           label: Category,
           widget: select,
-          options: ["services", "property", "blog"],
+          options: ["menu item", "services", "property", "blog"],
           required: true,
         }
       - { name: body, label: Body, widget: markdown, required: true }

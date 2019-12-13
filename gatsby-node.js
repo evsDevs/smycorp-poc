@@ -60,12 +60,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  console.log(leasingPage)
-
   leasingPage.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: path.resolve(`./src/templates/leasing-template.js`),
+      component: path.resolve(`./src/templates/services-template.js`),
       context: {
         path: node.frontmatter.path,
       },
