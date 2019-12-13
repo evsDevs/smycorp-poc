@@ -32,8 +32,41 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.frontmatter.path,
       component: path.resolve(`./src/templates/template.js`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
+        path: node.frontmatter.path,
+      },
+    })
+  })
+
+  const leasingPage = await graphql(`
+    query {
+      allMarkdownRemark(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { category: { eq: "services" } } }
+      ) {
+        totalCount
+        edges {
+          node {
+            id
+            excerpt
+            frontmatter {
+              title
+              path
+              date
+              category
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(leasingPage)
+
+  leasingPage.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve(`./src/templates/leasing-template.js`),
+      context: {
         path: node.frontmatter.path,
       },
     })

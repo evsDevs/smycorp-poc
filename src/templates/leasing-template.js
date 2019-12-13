@@ -5,10 +5,11 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  console.log(markdownRemark)
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
+    <div>
+      {console.log("leasing frontmatter", frontmatter)}
+      {console.log("leasing html", html)}
+      <div>
         <h1>{frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
