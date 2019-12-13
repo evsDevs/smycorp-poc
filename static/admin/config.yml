@@ -9,7 +9,14 @@ collections:
     folder: blog
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: path, label: Path, required: true }
       - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: title, label: Title, required: true }
+      - {
+          name: category,
+          label: Category,
+          widget: select,
+          options: ["services", "property", "blog"],
+          required: true,
+        }
+      - { name: body, label: Body, widget: markdown, required: true }
