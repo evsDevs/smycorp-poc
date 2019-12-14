@@ -4,9 +4,9 @@ backend:
 media_folder: static/assets
 public_folder: assets
 collections:
-  - name: markdown-pages
-    label: Menu Pages
-    folder: markdown-pages
+  - name: menu-item
+    label: Menu Item
+    folder: markdown-pages/menu
     create: true
     fields:
       - { name: path, label: Path, required: true }
