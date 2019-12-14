@@ -4,7 +4,7 @@ backend:
 media_folder: static/assets
 public_folder: assets
 collections:
-  - name: menu
+  - name: markdown-pages
     label: Menu Pages
     folder: markdown-pages
     create: true
