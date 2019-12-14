@@ -1,7 +1,7 @@
 ---
-path: new
+path: equity
 date: 2019-12-11T16:09:32.861Z
-title: New Post
+title: Equity
 category: menu item
 ---
-ksdlfjlskfja
+Equity
