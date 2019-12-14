@@ -5,7 +5,6 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  console.log(markdownRemark)
   return (
     <div className="blog-post-container">
       <div className="blog-post">
@@ -16,8 +15,8 @@ export default function Template({
   )
 }
 export const query = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
