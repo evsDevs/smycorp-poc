@@ -6,7 +6,7 @@ public_folder: assets
 collections:
   - name: menu-item
     label: Menu Item
-    folder: markdown-pages/menu
+    folder: markdown-pages/menu-item
     create: true
     fields:
       - { name: path, label: Path, required: true }
