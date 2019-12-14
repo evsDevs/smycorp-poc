@@ -7,8 +7,6 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <div>
-      {console.log("leasing frontmatter", frontmatter)}
-      {console.log("leasing html", html)}
       <div>
         <h1>{frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -17,8 +15,8 @@ export default function Template({
   )
 }
 export const query = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
