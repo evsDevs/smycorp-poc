@@ -20,3 +20,20 @@ collections:
           required: true,
         }
       - { name: body, label: Body, widget: markdown, required: true }
+
+  - name: service
+    label: Service
+    folder: markdown-pages/service
+    create: true
+    fields:
+      - { name: path, label: Path, required: true }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title, required: true }
+      - {
+          name: category,
+          label: Category,
+          widget: select,
+          options: ["menu item", "services", "property", "blog"],
+          required: true,
+        }
+      - { name: body, label: Body, widget: markdown, required: true }
