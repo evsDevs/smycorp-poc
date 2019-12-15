@@ -8,7 +8,7 @@ export default function Template({
   return (
     <div>
       <div>
-        <h1>{frontmatter.title}</h1>
+        <h1>Equity - {frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>

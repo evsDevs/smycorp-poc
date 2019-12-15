@@ -17,24 +17,22 @@ exports.createPages = async ({ graphql, actions }) => {
   // const menuPages = await graphql(`
   //   query {
   //     allMarkdownRemark(
+  //       sort: { order: ASC, fields: [frontmatter___title] }
   //       filter: { frontmatter: { category: { eq: "menu item" } } }
   //     ) {
   //       edges {
   //         node {
-  //           frontmatter {
-  //             path
+  //           fields {
+  //             slug
   //           }
   //         }
   //       }
   //     }
   //   }
   // `)
-  const menuPages = await graphql(`
+  const allPages = await graphql(`
     query {
-      allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { category: { eq: "menu item" } } }
-      ) {
+      allMarkdownRemark {
         edges {
           node {
             fields {
@@ -45,42 +43,44 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  menuPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/template.js`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
+  // allPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  //   createPage({
+  //     path: node.fields.slug,
+  //     component: path.resolve(
+  //       `./src/templates/${node.frontmatter.templateKey}-template.js`
+  //     ),
+  //     context: {
+  //       slug: node.fields.slug,
+  //     },
+  //   })
+  // })
 
-  const servicesPage = await graphql(`
-    query {
-      allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { category: { eq: "services" } } }
-      ) {
-        edges {
-          node {
-            id
-            excerpt
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const servicesPage = await graphql(`
+  //   query {
+  //     allMarkdownRemark(
+  //       sort: { order: ASC, fields: [frontmatter___title] }
+  //       filter: { frontmatter: { category: { eq: "services" } } }
+  //     ) {
+  //       edges {
+  //         node {
+  //           id
+  //           excerpt
+  //           fields {
+  //             slug
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  servicesPage.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/services-template.js`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
+  // servicesPage.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  //   createPage({
+  //     path: node.fields.slug,
+  //     component: path.resolve(`./src/templates/service-template.js`),
+  //     context: {
+  //       slug: node.fields.slug,
+  //     },
+  //   })
+  // })
 }

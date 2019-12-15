@@ -9,16 +9,15 @@ collections:
     folder: markdown-pages/menu-item
     create: true
     fields:
+      - {
+          name: templateKey,
+          label: Template Key,
+          widget: hidden,
+          default: menu-item,
+        }
       - { name: path, label: Path, required: true }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title, required: true }
-      - {
-          name: category,
-          label: Category,
-          widget: select,
-          options: ["menu item", "services", "property", "blog"],
-          required: true,
-        }
       - { name: body, label: Body, widget: markdown, required: true }
 
   - name: service
@@ -26,16 +25,15 @@ collections:
     folder: markdown-pages/service
     create: true
     fields:
+      - {
+          name: templateKey,
+          label: Template Key,
+          widget: hidden,
+          default: service,
+        }
       - { name: path, label: Path, required: true }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title, required: true }
-      - {
-          name: category,
-          label: Category,
-          widget: select,
-          options: ["menu item", "services", "property", "blog"],
-          required: true,
-        }
       - { name: body, label: Body, widget: markdown, required: true }
 
   - name: equity
@@ -43,14 +41,13 @@ collections:
     folder: markdown-pages/equity
     create: true
     fields:
+      - {
+          name: templateKey,
+          label: Template Key,
+          widget: hidden,
+          default: equity,
+        }
       - { name: path, label: Path, required: true }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title, required: true }
-      - {
-          name: category,
-          label: Category,
-          widget: select,
-          options: ["menu item", "services", "property", "blog"],
-          required: true,
-        }
       - { name: body, label: Body, widget: markdown, required: true }
