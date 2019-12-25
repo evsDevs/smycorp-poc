@@ -33,22 +33,32 @@ collections:
       - { name: path, label: Path, required: true }
       - { name: title, label: Title, required: true }
       - { name: body, label: Body, widget: markdown, required: true }
-      
+
   - name: "pages"
     label: "Pages"
     files:
       - file: "markdown-pages/services/index.md"
-      label: "Services Landing Page"
-      name: "services"
-      fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
+        label: "Services Landing Page"
+        name: "services"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "services-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
 
       - file: "markdown-pages/equity/index.md"
-      label: "Equity Landing Page"
-      name: "equity"
-      fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equity-page"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
+        label: "Equity Landing Page"
+        name: "equity"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "equity-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
