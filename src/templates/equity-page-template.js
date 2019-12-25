@@ -8,7 +8,7 @@ export default function Template({
   return (
     <div>
       <div>
-        <h1>Service - {data.markdownRemark.frontmatter.title}</h1>
+        <h1>Equity - {data.markdownRemark.frontmatter.title}</h1>
         <div
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark.frontmatter.html,
@@ -16,7 +16,7 @@ export default function Template({
         />
       </div>
       {console.log(data)}
-      {console.log("services")}
+      {console.log("equity homepage")}
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={`/${node.frontmatter.path}`}>
@@ -31,7 +31,7 @@ export const query = graphql`
   query($slug: String!) {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___title] }
-      filter: { frontmatter: { templateKey: { eq: "service" } } }
+      filter: { frontmatter: { templateKey: { eq: "equity-page" } } }
     ) {
       edges {
         node {

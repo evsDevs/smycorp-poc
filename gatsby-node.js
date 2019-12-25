@@ -38,22 +38,25 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              templateKey
+            }
           }
         }
       }
     }
   `)
-  // allPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //   createPage({
-  //     path: node.fields.slug,
-  //     component: path.resolve(
-  //       `./src/templates/${node.frontmatter.templateKey}-template.js`
-  //     ),
-  //     context: {
-  //       slug: node.fields.slug,
-  //     },
-  //   })
-  // })
+  allPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(
+        `./src/templates/${node.frontmatter.templateKey}-template.js`
+      ),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
+  })
 
   // const servicesPage = await graphql(`
   //   query {

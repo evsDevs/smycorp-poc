@@ -4,22 +4,6 @@ backend:
 media_folder: static/assets
 public_folder: assets
 collections:
-  - name: menu-item
-    label: Menu Item
-    folder: markdown-pages/menu-item
-    create: true
-    fields:
-      - {
-          name: templateKey,
-          label: Template Key,
-          widget: hidden,
-          default: menu-item,
-        }
-      - { name: path, label: Path, required: true }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title, required: true }
-      - { name: body, label: Body, widget: markdown, required: true }
-
   - name: service
     label: Service
     folder: markdown-pages/service
@@ -27,12 +11,11 @@ collections:
     fields:
       - {
           name: templateKey,
-          label: Template Key,
+          label: "Template Key",
           widget: hidden,
-          default: service,
+          default: "service",
         }
       - { name: path, label: Path, required: true }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title, required: true }
       - { name: body, label: Body, widget: markdown, required: true }
 
@@ -43,11 +26,29 @@ collections:
     fields:
       - {
           name: templateKey,
-          label: Template Key,
+          label: "Template Key",
           widget: hidden,
-          default: equity,
+          default: "equity",
         }
       - { name: path, label: Path, required: true }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title, required: true }
       - { name: body, label: Body, widget: markdown, required: true }
+      
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "markdown-pages/services/index.md"
+      label: "Services Landing Page"
+      name: "services"
+      fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "markdown-pages/equity/index.md"
+      label: "Equity Landing Page"
+      name: "equity"
+      fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equity-page"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}

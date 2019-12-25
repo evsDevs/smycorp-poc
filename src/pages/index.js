@@ -9,6 +9,8 @@ import SEO from "../components/seo"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+    {console.log(data)}
+    <h1>Home</h1>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
         <Link to={`${node.fields.slug}`}>
@@ -25,7 +27,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___title] }
-      filter: { frontmatter: { category: { eq: "menu item" } } }
+      filter: { frontmatter: { templateKey: { eq: "menu-item" } } }
     ) {
       edges {
         node {
