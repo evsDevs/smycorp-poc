@@ -31,7 +31,7 @@ export const query = graphql`
   query($slug: String!) {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___title] }
-      filter: { frontmatter: { templateKey: { eq: "equity-page" } } }
+      filter: { frontmatter: { templateKey: { eq: "equity-homepage" } } }
     ) {
       edges {
         node {
