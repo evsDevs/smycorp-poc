@@ -4,9 +4,9 @@ backend:
 media_folder: static/assets
 public_folder: assets
 collections:
-  - name: service
-    label: Service
-    folder: markdown-pages/service
+  - name: services
+    label: Services
+    folder: markdown-pages/services
     create: true
     fields:
       - {
