@@ -13,7 +13,7 @@ collections:
           name: templateKey,
           label: "Template Key",
           widget: hidden,
-          default: "service",
+          default: "service-page",
         }
       - { name: path, label: Path, required: true }
       - { name: title, label: Title, required: true }
@@ -28,7 +28,7 @@ collections:
           name: templateKey,
           label: "Template Key",
           widget: hidden,
-          default: "equity",
+          default: "equity-page",
         }
       - { name: path, label: Path, required: true }
       - { name: title, label: Title, required: true }
@@ -37,7 +37,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "markdown-pages/services/index.md"
+      - file: "markdown-pages/services.md"
         label: "Services Landing Page"
         name: "services"
         fields:
@@ -45,12 +45,12 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "services-page",
+              default: "services",
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "markdown-pages/equity/index.md"
+      - file: "markdown-pages/equity.md"
         label: "Equity Landing Page"
         name: "equity"
         fields:
@@ -58,7 +58,7 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "equity-page",
+              default: "equity",
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }

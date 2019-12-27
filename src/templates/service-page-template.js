@@ -16,7 +16,7 @@ export default function Template({
         />
       </div>
       {console.log(data)}
-      {console.log("services")}
+      {console.log("services page")}
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={`/${node.frontmatter.path}`}>
@@ -31,7 +31,7 @@ export const query = graphql`
   query($slug: String!) {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___title] }
-      filter: { frontmatter: { templateKey: { eq: "service" } } }
+      filter: { frontmatter: { templateKey: { eq: "service-page" } } }
     ) {
       edges {
         node {

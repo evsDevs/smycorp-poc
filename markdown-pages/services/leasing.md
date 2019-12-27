@@ -1,7 +1,7 @@
 ---
 path: leasing
 title: Leasing
-templateKey: service
+templateKey: service-page
 ---
 
 Leasing page

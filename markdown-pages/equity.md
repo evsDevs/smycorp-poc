@@ -1,7 +1,7 @@
 ---
 path: equity
 title: Equity Home
-templateKey: equity-page
+templateKey: equity
 ---
 
 Equity Home page

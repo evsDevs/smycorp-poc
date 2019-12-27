@@ -1,7 +1,7 @@
 ---
 path: capital-markets
 title: Capital Markets
-templateKey: service
+templateKey: service-page
 ---
 
 Capital Markets page

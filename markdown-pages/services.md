@@ -1,7 +1,7 @@
 ---
 path: services
 title: Services Home
-templateKey: services-page
+templateKey: services
 ---
 
 Services Home page
